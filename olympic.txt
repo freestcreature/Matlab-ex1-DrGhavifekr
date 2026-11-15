@@ -1,0 +1,28 @@
+clear
+clc
+close all
+
+% Draw Olympic rings using the custom getCircle function
+r = 1.0;
+centers = [
+    -2.2,  1.5; % Blue ring (Top-Left)
+     0.0,  1.5; % Black ring (Top-Middle)
+     2.2,  1.5; % Red ring (Top-Right)
+    -1.1,  0.5; % Yellow ring (Bottom-Left)
+     1.1,  0.5  % Green ring (Bottom-Right)
+];
+
+colors = {'b', 'k', 'r', 'y', 'g'};
+
+figure(1);
+for i = 1:5
+    [x, y] = getCircle(centers(i, :), r);
+    plot(x, y, colors{i}, 'LineWidth', 3);
+    hold on;
+end
+
+title('Olympic Flag Rings');
+axis equal;
+grid on;
+box off;
+hold off;
